@@ -21,6 +21,13 @@ public class AnswerDao {
         };
         return jdbcTemplate.queryForObject(sql, rm) + 1;
     }
+    
+    public void deleteAnswerById(long answerIdToDelete)
+    {
+    		JdbcTemplate jdbcTemplate = new JdbcTemplate();
+            String sql = "DELETE ANSWERS WHERE answerId =  ?";
+            jdbcTemplate.update(sql, answerIdToDelete);
+    }
 
     public Answer insert(Answer answer) {
         Long newAnswerId = newAnswerId();

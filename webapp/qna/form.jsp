@@ -19,22 +19,26 @@
                     <h1>질문하기</h1>
                 </div>
                 
-                <form name="question" method="post" action="/qna/create">
-                    <table>
-                    	<tr>
-                            <td class="span1">글쓴이</td>
-                            <td><input type="text" name="writer" class="span3"></td>
-                        </tr>
-                        <tr>
-                            <td>제목</td>
-                            <td><input type="text" name="title" class="span7"></td>
-                        </tr>
-                        <tr>
-                            <td>내용</td>
-                            <td><textarea name="contents" rows="5" class="span7"></textarea></td>
-                        </tr>
-                    </table>
-                    <input type="submit" class="btn btn-primary pull-right" value="질문하기" />
+                <form name="question" method="post" action="/qna/create.next">
+					<table>
+						<tr>
+							<td class="span1">글쓴이</td>
+							<td><input type="hidden" name="writer" class="span3"
+								value="${user.name}"></td>
+						</tr>
+						<tr>
+							<td>${user.name}</td>
+						</tr>
+						<tr>
+							<td>제목</td>
+							<td><input type="text" name="title" class="span7"></td>
+						</tr>
+						<tr>
+							<td>내용</td>
+							<td><textarea name="contents" rows="5" class="span7"></textarea></td>
+						</tr>
+					</table>
+					<input type="submit" class="btn btn-primary pull-right" value="질문하기" />
                 </form>
             </div>
         </div>

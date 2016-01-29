@@ -4,9 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import next.web.qna.AddAnswerController;
+import next.web.qna.DeleteAnswerController;
 import next.web.qna.ListController;
 import next.web.qna.ShowController;
 import next.web.user.CreateController;
+import next.web.user.CreateQuestionController;
 import next.web.user.LoginController;
 import next.web.user.LogoutController;
 import next.web.user.UpdateController;
@@ -28,6 +30,8 @@ public class RequestMapping {
 	    mappings.put("/user/updateForm.next", new UpdateFormController());
 	    mappings.put("/user/update.next", new UpdateController());
 	    
+	    mappings.put("/api/qna/deleteanswer.next", new DeleteAnswerController());
+	    mappings.put("/qna/create.next", new CreateQuestionController());
 		mappings.put("/qna/list.next", new ListController());
 		mappings.put("/qna/show.next", new ShowController());
 		mappings.put("/api/qna/addanswer.next", new AddAnswerController());
